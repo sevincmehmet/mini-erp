@@ -1,0 +1,16 @@
+.env
+.DS_Store
+node_modules/
+desktop/dist/
+desktop/release/
+**/bin/
+**/obj/
+desktop/release-demo/
+backend/publish/
+*.tsbuildinfo
+.vite/
+TestResults/
+*.db
+*.db-shm
+*.db-wal
+*.log

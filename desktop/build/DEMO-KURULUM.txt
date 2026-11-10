@@ -1,0 +1,22 @@
+MINI-ERP DEMO — KURULUM
+
+1) "Mini-ERP-Demo-Kurulum-0.1.0.exe" dosyasına çift tıklayın.
+
+2) Windows "Windows bilgisayarınızı korudu" uyarısı gösterirse:
+   "Ek bilgi"ye tıklayın, ardından "Yine de çalıştır"a basın.
+   (Demo sürüm henüz dijital olarak imzalanmadığı için bu uyarı normaldir.)
+
+3) Kurulum tek tıkla tamamlanır ve uygulama kendiliğinden açılır.
+   Masaüstüne "Mini-ERP Demo" kısayolu eklenir.
+
+4) Giriş ekranında demo hesabı hazırdır: "Demoyu Başlat"a basın.
+   E-posta: yonetici@ornek.com   Şifre: MiniErp2026!
+
+5) Uygulamanın özelliklerini görmek için sağ üstteki "Uygulamayı Tanı"
+   ya da uygulama içindeki (?) düğmesine tıklayın.
+
+NOTLAR
+- Demo internet ve sunucu gerektirmez; tüm veriler örnektir ve yalnızca bu bilgisayarda tutulur.
+- İstediğiniz gibi deneyin; Ayarlar > Demo > "Demoyu Baştan Kur" ile ilk hâline dönebilirsiniz.
+- Kaldırmak için: Ayarlar > Uygulamalar > Mini-ERP Demo > Kaldır (demo verileri de silinir).
+- Canlı sürümde veriler şirketinize ait güvenli bir sunucuda tutulur ve birden fazla kullanıcı aynı anda çalışabilir.

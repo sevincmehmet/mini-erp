@@ -1,0 +1,34 @@
+# Sunucu kurulumu: SQL Server + Mini-ERP API + otomatik HTTPS (Caddy)
+# Kullanım: .env dosyasını doldurun (bkz. .env.example), sonra `docker compose up -d`
+services:
+  sql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: ${SQL_SA_PASSWORD:?SQL_SA_PASSWORD gerekli}
+    volumes:
+      - sqldata:/var/opt/mssql
+    restart: unless-stopped
+    # Port dışarı açılmaz; yalnızca API erişir
+
+  api:
+    build: ./backend
+    depends_on: [sql]
+    environment:
+      ConnectionStrings__Default: "Server=sql;Database=MiniErp;User Id=sa;Password=${SQL_SA_PASSWORD};TrustServerCertificate=True;Encrypt=True"
+      Jwt__Key: ${JWT_KEY:?JWT_KEY gerekli (en az 32 karakter)}
+      Database__MigrateOnStartup: "true"
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:2
+    depends_on: [api]
+    ports: ["80:80", "443:443"]
+    command: caddy reverse-proxy --from ${API_DOMAIN:?API_DOMAIN gerekli} --to api:8080
+    volumes:
+      - caddydata:/data
+    restart: unless-stopped
+
+volumes:
+  sqldata:
+  caddydata:
