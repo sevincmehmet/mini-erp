@@ -21,5 +21,8 @@ module.exports = {
     shortcutName: 'Mini-ERP Demo',
     deleteAppDataOnUninstall: true,
   },
-  mac: { ...base.mac, target: ['dmg'], artifactName: 'Mini-ERP-Demo-${version}-${arch}.${ext}' },
+  // Apple Developer sertifikası yok: ad-hoc imza ('-'). İmzasız paket Apple Silicon'da indirildikten
+  // sonra "hasarlı" diye açılmaz; ad-hoc imzayla Sistem Ayarları > Gizlilik ve Güvenlik > "Yine de Aç" yeterli.
+  // Noter onayı (notarization) olmadığı için hardened runtime'a gerek yok.
+  mac: { ...base.mac, target: ['dmg'], identity: '-', hardenedRuntime: false, artifactName: 'Mini-ERP-Demo-${version}-${arch}.${ext}' },
 }

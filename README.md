@@ -71,7 +71,7 @@ cd desktop && npm install && npm run dev
 
 Demo giriş: `yonetici@ornek.com` / `MiniErp2026!` · Örnek veriyi baştan üretmek: `dotnet run --project src/MiniErp.Api -- --seed`
 
-Sunucu kurulumu, masaüstü paketleme ve sunucusuz demo paketi için: **[KURULUM.md](KURULUM.md)**. Hazır Windows demo kurulumu [Releases](../../releases) sayfasında.
+Sunucu kurulumu, masaüstü paketleme ve sunucusuz demo paketi için: **[KURULUM.md](KURULUM.md)**. Hazır Windows ve macOS (Apple Silicon) demo kurulumları [Releases](../../releases) sayfasında.
 
 `ornek-excel-dosyalari/` içindeki personel, vardiya ve üretim tabloları içe aktarmayı denemek için hazırlanmış **uydurma** verilerdir.
 
